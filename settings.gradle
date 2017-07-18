@@ -1,0 +1,1 @@
+include 'mensa-common', 'mensa-indexer', 'mensa-telegram', 'mensa-http'

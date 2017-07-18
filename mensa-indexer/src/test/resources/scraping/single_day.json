@@ -1,0 +1,73 @@
+[ {
+  "id" : "100_2017_07_01_1_1",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Gut und günstig",
+  "description" : "Brokkoli-Nudel-Gratin (14,20,22) , mediterrane Tomatensoße (25)",
+  "labels" : [ "Klima Teller", "vegetarisch" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 14, 20, 22, 25 ]
+}, {
+  "id" : "100_2017_07_01_1_2",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Gut und günstig",
+  "description" : "Gemüse-Schupfnudel-Pfanne (14,16) , Sesamsoße (14,20,24)",
+  "labels" : [ "vegetarisch" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 14, 16, 20, 24 ]
+}, {
+  "id" : "100_2017_07_01_2_1",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Beliebt und gerne gegessen",
+  "description" : "Paniertes Schweineschnitzel (14,16,20) , Waldpilzrahmsoße (20,25) , Amazing Fries",
+  "labels" : [ "mit Schwein" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 14, 16, 20, 25 ]
+}, {
+  "id" : "100_2017_07_01_2_2",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Beliebt und gerne gegessen",
+  "description" : "Seelachsschnitte Italiano (14,17,20) , mediterrane Tomatensoße (14,20,25) , Gemüsereis (22)",
+  "labels" : [ "mit Fisch" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 14, 17, 20, 22, 25 ]
+}, {
+  "id" : "100_2017_07_01_2_3",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Beliebt und gerne gegessen",
+  "description" : "Paniertes Putenschnitzel (14) , mediterrane Tomatensoße (25) , Nudeln (14)",
+  "labels" : [ "Klima Teller", "laktosefrei", "mit Geflügel" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 14, 25 ]
+}, {
+  "id" : "100_2017_07_01_2_4",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Beliebt und gerne gegessen",
+  "description" : "Gyros vom Schwein, Reisnudeln mit Tomaten, Krautsalat (3,5,14,25)",
+  "labels" : [ "laktosefrei", "mit Schwein", "Mensa Vital" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 3, 5, 14, 25 ]
+}, {
+  "id" : "100_2017_07_01_2_5",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Beliebt und gerne gegessen",
+  "description" : "Gebackene Seelachsecken (14,16,17,23) , mediterrane Tomatensoße (14,20,25) , Gemüsereis (22)",
+  "labels" : [ "mit Fisch" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 14, 16, 17, 20, 22, 23, 25 ]
+}, {
+  "id" : "100_2017_07_01_3_1",
+  "date" : "2017-07-01",
+  "mensaId" : "100",
+  "category" : "Campus Spezial",
+  "description" : "Gebratenes Zanderfilet (17) , Spitzkohl mit Rahmsoße (20) , kleine Kartoffeln",
+  "labels" : [ "mit Fisch" ],
+  "prices" : [ 3.05, 3.05 ],
+  "allergens" : [ 17, 20 ]
+} ]

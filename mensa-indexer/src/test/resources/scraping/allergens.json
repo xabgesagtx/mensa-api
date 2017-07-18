@@ -1,0 +1,73 @@
+[ {
+  "number" : "1",
+  "name" : "Farbstoffe"
+}, {
+  "number" : "2",
+  "name" : "Konservierungsstoffe"
+}, {
+  "number" : "3",
+  "name" : "Antioxidationsmittel"
+}, {
+  "number" : "4",
+  "name" : "Geschmacksverstärker"
+}, {
+  "number" : "5",
+  "name" : "Geschwefelt"
+}, {
+  "number" : "6",
+  "name" : "Geschwärzt"
+}, {
+  "number" : "7",
+  "name" : "Gewachst"
+}, {
+  "number" : "8",
+  "name" : "Phosphat"
+}, {
+  "number" : "9",
+  "name" : "Süßungsmittel"
+}, {
+  "number" : "10",
+  "name" : "Phenylalaninquelle"
+}, {
+  "number" : "14",
+  "name" : "enthält glutenhaltiges Getreide (z. B. Weizen, Roggen, Gerste etc.)"
+}, {
+  "number" : "15",
+  "name" : "Krebstiere und Krebstiererzeugnisse"
+}, {
+  "number" : "16",
+  "name" : "Ei und Eierzeugnisse"
+}, {
+  "number" : "17",
+  "name" : "Fisch und Fischerzeugnisse"
+}, {
+  "number" : "18",
+  "name" : "Erdnüsse und Erdnusserzeugnisse"
+}, {
+  "number" : "19",
+  "name" : "Soja und Sojaerzeugnisse"
+}, {
+  "number" : "20",
+  "name" : "Milch und Milcherzeugnisse (einschl. Laktose)"
+}, {
+  "number" : "21",
+  "name" : "Schalenfrüchte (z.B. Mandel, Haselnüsse, Walnuss etc.)"
+}, {
+  "number" : "22",
+  "name" : "Sellerie und Sellerieerzeugnisse"
+}, {
+  "number" : "23",
+  "name" : "Senf und Senferzeugnisse"
+}, {
+  "number" : "24",
+  "name" : "Sesamsamen und Sesamsamenerzeugnisse"
+}, {
+  "number" : "25",
+  "name" : "Schwefeldioxid und Sulfite (Konzentration über 10mg/kg oder 10mg/l)"
+}, {
+  "number" : "26",
+  "name" : "Lupine und - erzeugnisse"
+}, {
+  "number" : "27",
+  "name" : "Mollusken"
+} ]

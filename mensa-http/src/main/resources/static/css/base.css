@@ -1,0 +1,32 @@
+body.regular {
+	padding-top: 70px;
+	padding-bottom: 30px;
+}
+
+p.text-right {
+    text-align: right;
+}
+
+.custom-toggle.collapsed:before
+{
+    content:'+' ;
+    display: inline-block;
+    width:12px;
+}
+.custom-toggle:before
+{
+    content:'-' ;
+    display: inline-block;
+    width:12px;
+}
+
+body.graphiql {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+#graphiql-container {
+    height: 100vh;
+}

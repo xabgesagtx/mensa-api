@@ -1,0 +1,12 @@
+scrape:
+  mensasUrl: "http://www.studierendenwerk-hamburg.de/studierendenwerk/de/essen/speiseplaene/"
+  allergenAndCategoryUrl: "http://www.studierendenwerk-hamburg.de/studierendenwerk/de/essen/lebensmittelinformationen/Symbole-und-Kennzeichen-im-Speiseplan/symbole-und-kennzeichen.php"
+update:
+  allergen:
+    cron: "0 0 1 * * ?"
+  label:
+    cron: "0 15 1 * * ?"
+  mensa:
+    cron: "0 30 1 * * ?"
+  menu:
+    cron: "0 */15 6-18 * * ?"

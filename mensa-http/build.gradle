@@ -1,0 +1,38 @@
+
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'mensa-http'
+	version = '0.0.1-SNAPSHOT'
+}
+
+bootRepackage {
+    executable = true
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile('io.springfox:springfox-swagger2:2.7.0')
+    compile('io.springfox:springfox-swagger-ui:2.7.0')
+    runtime('org.thymeleaf.extras:thymeleaf-extras-java8time')
+    runtime('org.webjars:bootstrap:3.3.7-1')
+    runtime('org.webjars:jquery:3.1.1-1')
+    // Graphql
+    compile('com.graphql-java:graphql-spring-boot-starter:3.4.1') {
+        exclude module: 'spring-boot-configuration-processor'
+        exclude module: 'spring-boot-autoconfigure'
+    }
+    compile('com.graphql-java:graphql-java-tools:3.1.2')
+    runtime('org.webjars.npm:es6-promise:4.1.0')
+    runtime('org.webjars.npm:whatwg-fetch:2.0.3')
+    runtime('org.webjars.npm:react:15.5.4')
+    runtime('org.webjars.npm:react-dom:15.5.4')
+    runtime('org.webjars.npm:codemirror-graphql:0.6.3')
+    runtime('org.webjars.npm:graphiql:0.10.1') {
+        exclude module: 'codemirror-graphql'
+    }
+	compile project(':mensa-common')
+    compileOnly('org.projectlombok:lombok:1.16.12')
+}

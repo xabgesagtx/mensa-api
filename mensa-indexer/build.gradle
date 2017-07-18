@@ -1,0 +1,24 @@
+
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'mensa-indexer'
+	version = '0.0.1-SNAPSHOT'
+}
+
+bootRepackage {
+	executable = true
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	compile('org.jsoup:jsoup:1.10.1')
+	compile('io.projectreactor:reactor-bus')
+	compile('org.springframework:spring-web')
+	testCompile('commons-io:commons-io:2.5')
+	compile project(':mensa-common')
+	compileOnly('org.projectlombok:lombok:1.16.12')
+	testCompile('commons-io:commons-io:2.5')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('com.google.guava:guava:21.0')
+}

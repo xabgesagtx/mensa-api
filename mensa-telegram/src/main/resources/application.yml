@@ -1,0 +1,23 @@
+telegram:
+  filters:
+  - messageKey: filter.vegan
+    value: vg
+    type: POSITIVE
+    labelsToFilter:
+    - "Vegan"
+  - messageKey: filter.vegetarian
+    value: vgt
+    type: POSITIVE
+    labelsToFilter:
+    - "vegetarisch"
+    - "Vegan"
+  - messageKey: filter.noPig
+    value: os
+    type: NEGATIVE
+    labelsToFilter:
+    - "mit Schwein"
+  - messageKey: filter.noCow
+    value: or
+    type: NEGATIVE
+    labelsToFilter:
+    - "mit Rind"

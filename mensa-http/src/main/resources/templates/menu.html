@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+	<title th:text="${mensa.name}">Mensa</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+	<h1 th:text="${mensa.name}">Mensa</h1>
+	<h2 th:text="${date}"></h2>
+	<p><a th:href="${mensa.mainUrl}">Visit official page</a></p>
+	<p th:if="${dishesMap.empty}"><strong>Sorry, no dishes found for this day</strong></p>
+	<div th:each="category : ${categories}">
+		<h3 th:text="${category}">Kategorie</h3>
+		<div class="panel panel-default" th:each="dish : ${dishesMap.get(category)}">
+			<div class="panel-heading">
+				<h5 th:text="${dish.description}">Pommes</h5>
+			</div>
+			<div class="panel-body">
+				<p class="col-md-6 col-xs-12"><th:block th:each="label : ${dish.labels}"><img th:if="${label.withImage}" th:src="${label.imageUrl}" th:title="${label.name}"/> <span th:if="${!label.withImage}" th:text="${label.name}">Label</span> </th:block></p>
+				<p class="col-md-6 col-xs-12 text-right" th:text="${dish.pricesString}">1,00€</p>
+				<div class="col-md-12">
+					<button class="custom-toggle btn btn-default collapsed" data-toggle="collapse" th:attr="data-target=${'#allergens_' + dish.id},aria-controls=${'#allergens_' + dish.id}" aria-expanded="false">Allergens</button>
+					<div class="collapse" th:id="${'allergens_' + dish.id}">
+						<th:block th:each="allergen : ${dish.allergens}">
+							<span th:text="${allergen.number + ' ' + allergen.name}">1 Irgendwas</span><br/>
+						</th:block>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<span class="pull-right"><a th:href="@{'/mensa/' + ${mensa.id} + '/' + ${#temporals.format(next, 'yyyy-MM-dd')}}" class="btn btn-default">Next &gt;</a></span>
+		<span><a th:href="@{'/mensa/' + ${mensa.id} + '/' + ${#temporals.format(previous, 'yyyy-MM-dd')}}" class="btn btn-default">&lt; Previous</a></span>
+	</div>
+</div>
+</body>
+</html>

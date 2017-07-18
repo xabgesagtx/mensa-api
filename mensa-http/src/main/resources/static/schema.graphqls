@@ -1,0 +1,21 @@
+schema {
+    query: Query
+}
+
+type Query {
+    mensa (id: ID!): Mensa
+}
+
+type Mensa {
+    id: ID
+    name: String
+    dishes (dateISOString: String!): [Dish]
+}
+
+type Dish {
+    description: String!
+    category: String
+    labels: [String]
+    allergens: [Int]
+    prices: [Float]
+}

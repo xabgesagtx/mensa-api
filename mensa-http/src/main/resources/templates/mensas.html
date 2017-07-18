@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+	<title>Mensas</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+	<h1>Mensas</h1>
+	<p>For all mensas we provide past, current and future menus</p>
+	<ul class="list-group">
+		<li class="list-group-item" th:each="mensa : ${mensas}">
+			<a th:href="@{'/mensa/' + ${mensa.id}}" th:text="${mensa.name}">Mensa</a>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

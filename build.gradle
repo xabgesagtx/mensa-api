@@ -1,0 +1,33 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+
+	idea {
+		module {
+			downloadJavadoc = true
+			downloadSources = true
+		}
+	}
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+	compileJava.options.encoding = 'UTF-8'
+
+	repositories {
+	maven { url "https://jitpack.io" }
+		mavenLocal()
+		mavenCentral()
+	}
+}

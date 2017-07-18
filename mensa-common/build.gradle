@@ -1,0 +1,19 @@
+
+apply plugin: 'org.springframework.boot'
+
+bootRepackage.enabled = false
+
+jar {
+	baseName = 'mensa-common'
+	version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
+    compile('org.apache.commons:commons-lang3:3.4')
+    compile('de.jollyday:jollyday:0.5.2')
+    compileOnly('org.projectlombok:lombok:1.16.12')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

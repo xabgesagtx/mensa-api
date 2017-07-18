@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+	<title>APIs</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+	<h1>APIs</h1>
+	<h2>REST</h2>
+	<p>Read-only JSON API with full documentation</p>
+	<ul class="list-group">
+		<li class="list-group-item"><a th:href="@{/swagger-ui.html}">Swagger UI</a></li>
+		<li class="list-group-item"><a th:href="@{/v2/api-docs}">Swagger JSON</a></li>
+	</ul>
+	<h2>GraphQL</h2>
+	<ul class="list-group">
+		<li class="list-group-item"><a th:href="@{/graphiql}">GraphiQL</a></li>
+		<li class="list-group-item"><a th:href="@{/graphql(query='{mensa(id: \'430\') {id name}}')}">Example Query</a></li>
+		<li class="list-group-item"><a th:href="@{/schema.graphqls}">Schema</a></li>
+	</ul>
+	<h2>Telegram-Bot</h2>
+	<ul class="list-group">
+		<li class="list-group-item"><a href="https://t.me/mensahhbot">@mensahhbot</a></li>
+	</ul>
+</div>
+</body>
+</html>

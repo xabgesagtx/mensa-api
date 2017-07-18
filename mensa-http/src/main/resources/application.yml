@@ -1,0 +1,11 @@
+cache:
+  labels:
+    cron: "0 0 * * * ?"
+    stopwords:
+      - mit
+  allergens:
+    cron: "0 0 * * * ?"
+spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false

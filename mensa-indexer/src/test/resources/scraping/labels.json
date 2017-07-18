@@ -1,0 +1,53 @@
+[ {
+  "id" : null,
+  "name" : "Rindfleisch",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Rind.jpg?m=1341834177"
+}, {
+  "id" : null,
+  "name" : "Schweinefleisch",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Schwein.jpg?m=1341834202"
+}, {
+  "id" : null,
+  "name" : "Geflügel",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Gefluegel.jpg?m=1341835258"
+}, {
+  "id" : null,
+  "name" : "Wild",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Wild.jpg?m=1341836282"
+}, {
+  "id" : null,
+  "name" : "mensaVital",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Mensa_Vital_web.jpg?m=1444204953"
+}, {
+  "id" : null,
+  "name" : "Alkohol",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Alkohol.jpg?m=1341836063"
+}, {
+  "id" : null,
+  "name" : "Lamm",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Lamm.jpg?m=1341836054"
+}, {
+  "id" : null,
+  "name" : "Fisch",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Fisch.jpg?m=1341835545"
+}, {
+  "id" : null,
+  "name" : "Laktosefrei",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Laktosefrei.jpg?m=1341835562"
+}, {
+  "id" : null,
+  "name" : "Klimateller",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Klimateller.jpg?m=1341835577"
+}, {
+  "id" : null,
+  "name" : "Vegetarisch",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Vegetarisch.jpg?m=1341835524"
+}, {
+  "id" : null,
+  "name" : "Vegan",
+  "imageUrl" : "http://example.com/images/essen/Symbole/symbol_Vegan_small_sw.jpg?m=1341836584"
+}, {
+  "id" : null,
+  "name" : "Gelatine",
+  "imageUrl" : "http://example.com/images/essen/Symbole/Gelatine.jpg?m=1490788585"
+} ]
