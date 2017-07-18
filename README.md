@@ -1,4 +1,7 @@
+
 # Mensa API
+
+[![Build Status](https://travis-ci.org/xabgesagtx/mensa-api.svg?branch=master)](https://travis-ci.org/xabgesagtx/mensa-api)
 
 This project aims to provide the means to create an API for all data about mensas in Hamburg
 
