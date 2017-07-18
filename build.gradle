@@ -21,12 +21,19 @@ allprojects {
 		}
 	}
 
+	test {
+		testLogging {
+			events "failed"
+			exceptionFormat "full"
+		}
+	}
+
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
 	compileJava.options.encoding = 'UTF-8'
 
 	repositories {
-	maven { url "https://jitpack.io" }
+		maven { url "https://jitpack.io" }
 		mavenLocal()
 		mavenCentral()
 	}
