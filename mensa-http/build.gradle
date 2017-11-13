@@ -17,6 +17,7 @@ dependencies {
     compile('io.springfox:springfox-swagger2:2.7.0')
     compile('io.springfox:springfox-swagger-ui:2.7.0')
     runtime('org.thymeleaf.extras:thymeleaf-extras-java8time')
+    compile('io.github.jpenren:thymeleaf-spring-data-dialect:2.1.1')
     runtime('org.webjars:bootstrap:3.3.7-1')
     runtime('org.webjars:jquery:3.1.1-1')
     // Graphql
@@ -34,5 +35,5 @@ dependencies {
         exclude module: 'codemirror-graphql'
     }
 	compile project(':mensa-common')
-    compileOnly('org.projectlombok:lombok:1.16.12')
+    compileOnly('org.projectlombok:lombok:1.16.18')
 }

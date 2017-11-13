@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout" xmlns:sd="http://www.thymeleaf.org/spring-data">
+<head>
+    <title>Search</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+    <form method="get" class="form-horizontal">
+        <div class="form-group">
+            <label for="description" class="control-label col-sm-1">Search</label>
+            <div class="col-sm-11">
+                <input id="description" th:value="${#httpServletRequest.getParameter('description')}" type="text"
+                                                     class="form-control" placeholder="Description" name="description"
+                autofocus="autofocus" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mensaId" class="control-label col-sm-1">Mensa</label>
+            <div class="col-sm-11">
+                <select id="mensaId" name="mensaId" class="form-control">
+                    <option value="">All</option>
+                    <option th:each="mensa : ${mensas}" th:value="${mensa.id}" th:text="${mensa.name}" th:selected="${mensa.id == #httpServletRequest.getParameter('mensaId')}">Mensa</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="from" class="control-label col-sm-1">From</label>
+            <div class="col-sm-11">
+                <input id="from" name="from" type="date" class="form-control" th:value="${#httpServletRequest.getParameter('from')}" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="to" class="control-label col-sm-1">To</label>
+            <div class="col-sm-11">
+                <input id="to" name="to" type="date" class="form-control" th:value="${#httpServletRequest.getParameter('to')}" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="labels" class="control-label col-sm-1">Label</label>
+            <div class="col-sm-11">
+                <select id="labels" name="labels" class="form-control">
+                    <option value="">All</option>
+                    <option th:each="label : ${labels}" th:value="${label}" th:text="${label}" th:selected="${label == #httpServletRequest.getParameter('labels')}">Label</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="category" class="control-label col-sm-1">Category</label>
+            <div class="col-sm-11">
+                <select id="category" name="category" class="form-control">
+                    <option value="">All</option>
+                    <option th:each="category : ${categories}" th:value="${category}" th:text="${category}" th:selected="${category == #httpServletRequest.getParameter('category')}">Category</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-11">
+                <input class="btn btn-default" type="submit" value="Search" />
+            </div>
+        </div>
+
+    </form>
+    <div sd:pagination-summary="">info</div>
+    <div th:include="fragments::dish(true)" th:with="dish=${dish}" th:each="dish : ${dishes}">
+
+    </div>
+    <nav>
+        <ul class="pagination" sd:pagination="full">
+            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

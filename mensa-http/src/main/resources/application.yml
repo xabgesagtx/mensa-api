@@ -5,6 +5,8 @@ cache:
       - mit
   allergens:
     cron: "0 0 * * * ?"
+  mensas:
+    cron: "0 0 * * * ?"
 spring:
   jackson:
     serialization:

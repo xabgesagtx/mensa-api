@@ -7,7 +7,15 @@ import com.github.xabgesagtx.mensa.persistence.DishRepository;
 import com.github.xabgesagtx.mensa.persistence.MensaRepository;
 import com.github.xabgesagtx.mensa.time.TimeUtils;
 import com.github.xabgesagtx.mensa.web.dto.DishWebDTO;
+import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.querydsl.binding.QuerydslPredicate;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -18,6 +26,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -35,6 +44,9 @@ public class MensaWebController {
 
     @Autowired
     private DishWebDTOFactory dishDtoFactory;
+
+    @Autowired
+	private MongoTemplate template;
 
     @Autowired
     private DishRepository dishRepo;
@@ -70,7 +82,18 @@ public class MensaWebController {
         return renderMenu(mensa, date, modelAndView);
     }
 
-
+    @RequestMapping(value = "search", method = RequestMethod.GET)
+    public ModelAndView findDishes(@QuerydslPredicate(root = Dish.class) Predicate predicate, @PageableDefault(sort = {"date", "id"}, direction = Sort.Direction.DESC) Pageable pageable, ModelAndView modelAndView) {
+		Page<Dish> page = dishRepo.findAll(predicate, pageable);
+		List<DishWebDTO> dishes = page.getContent().stream().map(dishDtoFactory::create).collect(Collectors.toList());
+		modelAndView.addObject("page", page);
+		modelAndView.addObject("dishes", dishes);
+		modelAndView.addObject("labels", getLabelsFromDishes());
+		modelAndView.addObject("categories", getCategoriesFromDishes());
+		modelAndView.addObject("mensas", mensaRepo.findAllByOrderByName());
+        modelAndView.setViewName("search");
+        return modelAndView;
+    }
 
     private ModelAndView renderMenu(Mensa mensa, LocalDate date, ModelAndView modelAndView) {
         modelAndView.addObject("mensa", mensa);
@@ -86,6 +109,20 @@ public class MensaWebController {
         modelAndView.setViewName("menu");
         return modelAndView;
     }
+
+    List<String> getLabelsFromDishes() {
+		Query query = new Query();
+		List<String> labels = (List<String>) template.getCollection("dish").distinct("labels", query.getQueryObject());
+		Collections.sort(labels, String.CASE_INSENSITIVE_ORDER);
+		return labels;
+	}
+
+	List<String> getCategoriesFromDishes() {
+		Query query = new Query();
+		List<String> labels = (List<String>) template.getCollection("dish").distinct("category", query.getQueryObject());
+		Collections.sort(labels, String.CASE_INSENSITIVE_ORDER);
+		return labels;
+	}
 
 
 

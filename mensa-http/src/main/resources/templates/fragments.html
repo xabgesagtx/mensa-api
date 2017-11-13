@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+</head>
+<body>
+<div th:fragment="dish(showMensa)">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5 th:text="${dish.description}">Pommes</h5>
+            <h6 th:if="${showMensa and dish.mensa != null}"><a th:href="@{/mensa/{id}(id=${dish.mensa.id})}" th:text="${dish.mensa.name}"></a>, <span th:text="${#temporals.format(dish.date, 'dd.MM.yyyy')}">1.1.1970</span></h6>
+        </div>
+        <div class="panel-body">
+            <p class="col-md-6 col-xs-12"><th:block th:each="label : ${dish.labels}"><img th:if="${label.withImage}" th:src="${label.imageUrl}" th:title="${label.name}"/> <span th:if="${!label.withImage}" th:text="${label.name}">Label</span> </th:block></p>
+            <p class="col-md-6 col-xs-12 text-right" th:text="${dish.pricesString}">1,00€</p>
+            <div class="col-md-12">
+                <button class="custom-toggle btn btn-default collapsed" data-toggle="collapse" th:attr="data-target=${'#allergens_' + dish.id},aria-controls=${'#allergens_' + dish.id}" aria-expanded="false">Allergens</button>
+                <div class="collapse" th:id="${'allergens_' + dish.id}">
+                    <th:block th:each="allergen : ${dish.allergens}">
+                        <span th:text="${allergen.number + ' ' + allergen.name}">1 Irgendwas</span><br/>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
