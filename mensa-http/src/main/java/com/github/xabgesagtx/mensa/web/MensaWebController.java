@@ -10,6 +10,7 @@ import com.github.xabgesagtx.mensa.web.dto.DishWebDTO;
 import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -83,8 +84,10 @@ public class MensaWebController {
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
-    public ModelAndView findDishes(@QuerydslPredicate(root = Dish.class) Predicate predicate, @PageableDefault(sort = {"date", "id"}, direction = Sort.Direction.DESC) Pageable pageable, ModelAndView modelAndView) {
-		Page<Dish> page = dishRepo.findAll(predicate, pageable);
+    public ModelAndView findDishes(@QuerydslPredicate(root = Dish.class) Predicate predicate, @PageableDefault(sort = {"date"}, direction = Sort.Direction.DESC) Pageable pageable, ModelAndView modelAndView) {
+		Sort realSort = pageable.getSort().and(new Sort(Sort.Direction.ASC, "id"));
+		PageRequest pageRequest = new PageRequest(pageable.getPageNumber(), pageable.getPageSize(), realSort);
+		Page<Dish> page = dishRepo.findAll(predicate, pageRequest);
 		List<DishWebDTO> dishes = page.getContent().stream().map(dishDtoFactory::create).collect(Collectors.toList());
 		modelAndView.addObject("page", page);
 		modelAndView.addObject("dishes", dishes);
