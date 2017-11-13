@@ -7,7 +7,7 @@
 <div class="container" layout:fragment="content">
     <form method="get" class="form-horizontal">
         <div class="form-group">
-            <label for="description" class="control-label col-sm-1">Search</label>
+            <label for="description" class="control-label col-sm-1">Description</label>
             <div class="col-sm-11">
                 <input id="description" th:value="${#httpServletRequest.getParameter('description')}" type="text"
                                                      class="form-control" placeholder="Description" name="description"
@@ -51,6 +51,13 @@
                     <option value="">All</option>
                     <option th:each="category : ${categories}" th:value="${category}" th:text="${category}" th:selected="${category == #httpServletRequest.getParameter('category')}">Category</option>
                 </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-1">Sort by</label>
+            <div class="col-sm-11">
+                <a class="btn btn-default sorted" sd:pagination-sort="date">Date</a>
+                <a class="btn btn-default sorted" sd:pagination-sort="description">Description</a>
             </div>
         </div>
         <div class="form-group">

@@ -30,3 +30,11 @@ body.graphiql {
 #graphiql-container {
     height: 100vh;
 }
+
+.sorted-desc::after{
+    content:"\25BC";
+}
+
+.sorted-asc::after{
+    content: "\25B2";
+}
