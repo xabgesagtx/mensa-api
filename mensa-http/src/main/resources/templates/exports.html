@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+	<title>Exports</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+	<h1>Exports</h1>
+	<p>Exports are zipped CSV files that represent the mensa database</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Size</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="export : ${exports}">
+				<td><a th:href="@{'/exports/' + ${#temporals.format(export.dateTime, 'yyyyMMddHHmm')}}" th:text="${#temporals.format(export.dateTime, 'dd.MM.yyyy HH:mm')}">01.01.1970 20:22</a></td>
+				<td th:text="${export.sizeFormatted}">0 B</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

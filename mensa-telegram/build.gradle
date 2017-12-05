@@ -14,5 +14,4 @@ dependencies {
 	compile('com.github.xabgesagtx:telegram-spring-boot-starter:0.8')
 	compile('org.freemarker:freemarker:2.3.26-incubating')
 	compile project(':mensa-common')
-	compileOnly('org.projectlombok:lombok:1.16.12')
 }

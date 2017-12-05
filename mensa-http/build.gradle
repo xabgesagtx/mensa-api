@@ -35,5 +35,4 @@ dependencies {
         exclude module: 'codemirror-graphql'
     }
 	compile project(':mensa-common')
-    compileOnly('org.projectlombok:lombok:1.16.18')
 }

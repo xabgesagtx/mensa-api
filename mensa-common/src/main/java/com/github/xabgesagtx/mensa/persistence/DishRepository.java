@@ -23,6 +23,8 @@ public interface DishRepository extends MongoRepository<Dish, String>, QueryDslP
 
 	List<Dish> findByDateAndMensaIdAndLabelsNotInOrderByIdAsc(LocalDate date, String mensaId, List<String> labels);
 
+	List<Dish> findByMensaId(String mensaId);
+
 	List<Dish> findAllOrderById();
 
 	@Override

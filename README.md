@@ -11,6 +11,7 @@ This project aims to provide the means to create an API for all data about mensa
 * REST-API with Swagger documentation and Swagger UI view
 * responsive HTML view of menus
 * GraphQL-API with GraphiQL view 
+* CSV export of mensa data for usage in other languages and tools (e.g. R)
 * access of menus via Telegram bot
 
 ## Components
@@ -18,7 +19,8 @@ This project aims to provide the means to create an API for all data about mensa
 There are the following components
 
 * *mensa-common* provides the shared code infrastructure, especially for persistence (i.e. MongoDB)
-* *mensa-http* provides HTTP access to the mensa data
+* *mensa-exporter* exports the content from the database to CSV files (files will be zipped afterwards)
+* *mensa-http* provides HTTP access to the mensa data and exports
 * *mensa-indexer* provides scheduled indexing of the mensa content
 * *mensa-telegram* provides a Telegram bot for accessing the mensa data
 
@@ -42,12 +44,26 @@ spring:
       password: PASSWORD
 ```
 
+### Exporter
+
+For the exporter to run you need to set the folder where the final zip file with exported data should be copied to
+```
+exporter:
+  destinationDir: ABSOLUTE_PATH
+```
+
 ### HTTP
 
 You might want to set the port where the http API should be running
 ```
 server:
   port: 8080
+```
+
+Also, you need to set the directory where the exported csv files are located
+```
+exports:
+  exportsDir: ABSOLUTE_PATH
 ```
 
 ### Telegram

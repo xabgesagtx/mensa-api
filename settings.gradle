@@ -1,1 +1,2 @@
-include 'mensa-common', 'mensa-indexer', 'mensa-telegram', 'mensa-http'
+include 'mensa-common', 'mensa-indexer', 'mensa-telegram', 'mensa-http', 'mensa-exporter'
+

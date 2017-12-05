@@ -1,0 +1,26 @@
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+jar {
+    baseName = 'mensa-exporter'
+    version = '0.0.1-SNAPSHOT'
+}
+
+bootRepackage {
+    executable = true
+}
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.apache.commons:commons-csv:1.5')
+    compile('commons-io:commons-io:2.6')
+    compile project(':mensa-common')
+}
