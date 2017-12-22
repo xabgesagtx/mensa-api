@@ -16,5 +16,6 @@ public class ScrapeConfig {
 
     String mensasUrl;
     String allergenAndCategoryUrl;
+    String nominatinUrl;
 
 }

@@ -1,4 +1,4 @@
-package com.github.xabgesagtx.mensa.scrape;
+package com.github.xabgesagtx.mensa.scrape.model;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -14,7 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-class MenuUrls {
+public class MenuUrls {
 	
 	private String today;
 	private String tomorrow;

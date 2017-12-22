@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -38,12 +39,14 @@ public class ExportMensasJob implements Runnable {
 		log.info("Start exporting mensas");
 		List<Mensa> mensas = repo.findAllByOrderByName();
 		File outputFile = exportDirPath.resolve("mensas.csv").toFile();
-		CSVFormat csvFormat = CSVFormat.DEFAULT.withHeader("id", "mainUrl", "name", "nextWeekUrl", "thisWeekUrl", "todayUrl", "tomorrowUrl").withRecordSeparator('\n');
+		CSVFormat csvFormat = CSVFormat.DEFAULT.withHeader("id", "mainUrl", "name", "nextWeekUrl", "thisWeekUrl", "todayUrl", "tomorrowUrl", "longitude", "latitude", "address", "zipcode", "city").withRecordSeparator('\n');
 		try (FileWriter writer = new FileWriter(outputFile);
 			 CSVPrinter csvPrinter = new CSVPrinter(writer, csvFormat)
 		) {
 			for (Mensa mensa : mensas) {
-				csvPrinter.printRecord(mensa.getId(), mensa.getMainUrl(), mensa.getName(), mensa.getNextWeekUrl(), mensa.getThisWeekUrl(), mensa.getTodayUrl(), mensa.getTomorrowUrl());
+				String longitude = mensa.getPoint() == null ? StringUtils.EMPTY : Double.toString(mensa.getPoint().getX());
+				String latitude = mensa.getPoint() == null ? StringUtils.EMPTY : Double.toString(mensa.getPoint().getY());
+				csvPrinter.printRecord(mensa.getId(), mensa.getMainUrl(), mensa.getName(), mensa.getNextWeekUrl(), mensa.getThisWeekUrl(), mensa.getTodayUrl(), mensa.getTomorrowUrl(), longitude, latitude, mensa.getAddress(), mensa.getZipcode(), mensa.getCity());
 			}
 			log.info("Finished exporting {} mensas to file {}", mensas.size(), outputFile);
 		} catch (IOException e) {

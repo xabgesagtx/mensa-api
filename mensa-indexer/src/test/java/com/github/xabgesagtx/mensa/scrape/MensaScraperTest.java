@@ -1,7 +1,10 @@
 package com.github.xabgesagtx.mensa.scrape;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.github.xabgesagtx.mensa.geo.GeodataProvider;
 import com.github.xabgesagtx.mensa.model.Mensa;
+import com.github.xabgesagtx.mensa.scrape.model.MensaDetails;
+import com.github.xabgesagtx.mensa.scrape.model.MenuUrls;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
@@ -12,6 +15,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.data.geo.Point;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -31,17 +35,29 @@ public class MensaScraperTest {
 	
 	@Mock
 	private MenuUrlScraper menuUrlScraper;
+
+	@Mock
+	private MensaDetailsScraper detailsScraper;
+
+	@Mock
+	private GeodataProvider geodataProvider;
 	
 	private final String URL_PREFIX = "http://example.com/";
 	private final String TODAY_URL = URL_PREFIX + "today";
 	private final String TOMORROW_URL = URL_PREFIX + "tomorrow";
 	private final String THIS_WEEK_URL = URL_PREFIX + "thisWeek";
 	private final String NEXT_WEEK_URL = URL_PREFIX + "nextWeek";
+	private final String ADDRESS = "address";
+	private final String CITY = "city";
+	private final String ZIPCODE = "12345";
 	
 	@Before
 	public void setUp() {
 		MenuUrls urls = MenuUrls.of(TODAY_URL, TOMORROW_URL, THIS_WEEK_URL, NEXT_WEEK_URL);
 		when(menuUrlScraper.scrape(anyString())).thenReturn(Optional.of(urls));
+		MensaDetails details = MensaDetails.builder().city(CITY).zipcode(ZIPCODE).address(ADDRESS).build();
+		when(detailsScraper.scrape(anyString())).thenReturn(Optional.of(details));
+		when(geodataProvider.search(anyString(), anyString(), anyString())).thenReturn(Optional.of(new Point(1, 1)));
 	}
 
 	@Test

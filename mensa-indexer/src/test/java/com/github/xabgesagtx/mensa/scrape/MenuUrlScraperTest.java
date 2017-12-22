@@ -1,6 +1,7 @@
 package com.github.xabgesagtx.mensa.scrape;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.github.xabgesagtx.mensa.scrape.model.MenuUrls;
 import org.junit.Test;
 
 import java.io.IOException;

@@ -2,6 +2,7 @@ package com.github.xabgesagtx.mensa.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -11,8 +12,8 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-@AllArgsConstructor(staticName="of")
 @Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
@@ -27,6 +28,10 @@ public class Mensa {
 	private String tomorrowUrl;
 	private String thisWeekUrl;
 	private String nextWeekUrl;
+	private String address;
+	private String zipcode;
+	private String city;
+	private Point point;
 	private LocalDateTime updatedAt;
 
 }

@@ -1,5 +1,6 @@
 package com.github.xabgesagtx.mensa.scrape;
 
+import com.github.xabgesagtx.mensa.scrape.model.MenuUrls;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

@@ -1,7 +1,11 @@
 package com.github.xabgesagtx.mensa.scrape;
 
 import com.github.xabgesagtx.mensa.config.ScrapeConfig;
+import com.github.xabgesagtx.mensa.geo.GeodataProvider;
 import com.github.xabgesagtx.mensa.model.Mensa;
+import com.github.xabgesagtx.mensa.scrape.model.MensaDetails;
+import com.github.xabgesagtx.mensa.scrape.model.MenuUrls;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +24,17 @@ import java.util.stream.Stream;
  * Scraper to scrape mensas from a website and it linked websites
  */
 @Component
+@Slf4j
 public class MensaScraper extends AbstractSelfContainedScraper<List<Mensa>> {
 	
 	@Autowired
 	private MenuUrlScraper urlScraper;
+
+	@Autowired
+	private MensaDetailsScraper detailsScraper;
+
+	@Autowired
+	private GeodataProvider geodataProvider;
 
 	@Autowired
 	private ScrapeConfig config;
@@ -37,10 +48,33 @@ public class MensaScraper extends AbstractSelfContainedScraper<List<Mensa>> {
 			if (StringUtils.isNotBlank(name) && StringUtils.isNotBlank(mensaUrl)) {
 				Optional<String> mensaIdOpt = getIdFromMensaUrl(mensaUrl);
 				Optional<MenuUrls> menuUrlsOpt = urlScraper.scrape(mensaUrl);
-				if (mensaIdOpt.isPresent() && menuUrlsOpt.isPresent()) {
+				if (!mensaIdOpt.isPresent()) {
+					log.info("Could not get mensa id for mensa at url: \"{}\"", mensaUrl);
+				} else if (!menuUrlsOpt.isPresent()) {
+					log.info("Could not get mensa urls for mensa at url: \"{}\"", mensaUrl);
+				} else {
 					String mensaId = mensaIdOpt.get();
 					MenuUrls menuUrls = menuUrlsOpt.get();
-					result = Stream.of(Mensa.builder().name(name).id(mensaId).mainUrl(mensaUrl).todayUrl(menuUrls.getToday()).thisWeekUrl(menuUrls.getThisWeek()).nextWeekUrl(menuUrls.getNextWeek()).tomorrowUrl(menuUrls.getTomorrow()).updatedAt(LocalDateTime.now()).build());
+					Optional<MensaDetails> detailsOpt = detailsScraper.scrape(menuUrls.getToday());
+					if (!detailsOpt.isPresent()) {
+						log.info("Could not get mensa details for mensa at url: \"{}\"", mensaUrl);
+					} else {
+						MensaDetails details = detailsOpt.get();
+						Mensa.MensaBuilder mensaBuilder = Mensa.builder()
+								.name(name)
+								.id(mensaId)
+								.mainUrl(mensaUrl)
+								.todayUrl(menuUrls.getToday())
+								.thisWeekUrl(menuUrls.getThisWeek())
+								.nextWeekUrl(menuUrls.getNextWeek())
+								.tomorrowUrl(menuUrls.getTomorrow())
+								.address(details.getAddress())
+								.city(details.getCity())
+								.zipcode(details.getZipcode())
+								.updatedAt(LocalDateTime.now());
+						geodataProvider.search(details.getAddress(), details.getZipcode(), details.getCity()).ifPresent(point -> mensaBuilder.point(point));
+						result = Stream.of(mensaBuilder.build());
+					}
 				}
 			}
 			return result;

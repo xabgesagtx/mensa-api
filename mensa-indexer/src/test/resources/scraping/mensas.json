@@ -6,6 +6,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.528"
 }, {
   "id" : "520",
@@ -15,6 +22,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.542"
 }, {
   "id" : "530",
@@ -24,6 +38,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.542"
 }, {
   "id" : "560",
@@ -33,6 +54,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.542"
 }, {
   "id" : "410",
@@ -42,6 +70,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.543"
 }, {
   "id" : "660",
@@ -51,6 +86,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.543"
 }, {
   "id" : "690",
@@ -60,6 +102,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.543"
 }, {
   "id" : "531",
@@ -69,6 +118,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.55"
 }, {
   "id" : "680",
@@ -78,6 +134,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.55"
 }, {
   "id" : "610",
@@ -87,6 +150,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.551"
 }, {
   "id" : "340",
@@ -96,6 +166,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.551"
 }, {
   "id" : "420",
@@ -105,6 +182,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.551"
 }, {
   "id" : "540",
@@ -114,6 +198,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.556"
 }, {
   "id" : "430",
@@ -123,6 +214,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.556"
 }, {
   "id" : "570",
@@ -132,6 +230,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.556"
 }, {
   "id" : "350",
@@ -141,6 +246,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.557"
 }, {
   "id" : "580",
@@ -150,6 +262,13 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.557"
 }, {
   "id" : "310",
@@ -159,5 +278,12 @@
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
   "nextWeekUrl" : "http://example.com/nextWeek",
+  "address" : "address",
+  "city" : "city",
+  "zipcode" : "12345",
+  "point": {
+    "x" : 1,
+    "y" : 1
+  },
   "updatedAt" : "2017-06-22T22:48:06.557"
 } ]
