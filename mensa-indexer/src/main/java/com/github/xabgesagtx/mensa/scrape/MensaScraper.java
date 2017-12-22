@@ -55,7 +55,9 @@ public class MensaScraper extends AbstractSelfContainedScraper<List<Mensa>> {
 				} else {
 					String mensaId = mensaIdOpt.get();
 					MenuUrls menuUrls = menuUrlsOpt.get();
-					Optional<MensaDetails> detailsOpt = detailsScraper.scrape(menuUrls.getToday());
+					Optional<MensaDetails> detailsOpt = Stream.of(menuUrls.getToday(), menuUrls.getTomorrow(), menuUrls.getThisWeek(), menuUrls.getNextWeek()).filter(StringUtils::isNotBlank)
+							.findFirst()
+							.flatMap(detailsScraper::scrape);
 					if (!detailsOpt.isPresent()) {
 						log.info("Could not get mensa details for mensa at url: \"{}\"", mensaUrl);
 					} else {

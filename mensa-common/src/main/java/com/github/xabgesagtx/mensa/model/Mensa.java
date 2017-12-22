@@ -3,6 +3,7 @@ package com.github.xabgesagtx.mensa.model;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -31,6 +32,7 @@ public class Mensa {
 	private String address;
 	private String zipcode;
 	private String city;
+	@GeoSpatialIndexed
 	private Point point;
 	private LocalDateTime updatedAt;
 

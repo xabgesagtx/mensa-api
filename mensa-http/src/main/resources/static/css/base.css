@@ -38,3 +38,19 @@ body.graphiql {
 .sorted-asc::after{
     content: "\25B2";
 }
+
+#mensa-map {
+    height: 380px;
+    margin-bottom: 10px;
+}
+
+.nearest-mensa {
+    background-color: white;
+    cursor: pointer !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.nearest-mensa:hover {
+    background-color: #f4f4f4;
+}

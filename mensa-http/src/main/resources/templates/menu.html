@@ -6,8 +6,12 @@
 <body>
 <div class="container" layout:fragment="content">
 	<h1 th:text="${mensa.name}">Mensa</h1>
+	<p><span th:text="${mensa.address}">Straße 12</span><br/>
+		<span th:text="${mensa.zipcode}">12345</span> <span th:text="${mensa.city}">city</span><br/>
+		<a th:href="${mensa.mainUrl}">Visit official page</a>
+	</p>
 	<h2 th:text="${date}"></h2>
-	<p><a th:href="${mensa.mainUrl}">Visit official page</a></p>
+
 	<p th:if="${dishesMap.empty}"><strong>Sorry, no dishes found for this day</strong></p>
 	<div th:each="category : ${categories}">
 		<h3 th:text="${category}">Kategorie</h3>

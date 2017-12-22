@@ -34,5 +34,6 @@ dependencies {
     runtime('org.webjars.npm:graphiql:0.10.1') {
         exclude module: 'codemirror-graphql'
     }
+    runtime('org.webjars:leaflet:1.2.0')
 	compile project(':mensa-common')
 }
