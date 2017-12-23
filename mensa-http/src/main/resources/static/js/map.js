@@ -18,9 +18,9 @@ $(document).ready(function() {
                     navigator.geolocation.getCurrentPosition(function (position) {
                         $.get('/rest/mensa/near', {longitude: position.coords.longitude, latitude: position.coords.latitude})
                             .done(function(mensa) {
-                                mensaMap.setView(new L.LatLng(mensa.point.y, mensa.point.x),14);
                                 $.each(markers, function(index, marker) {
-                                   if (marker.mensaId === mensa.id) {
+                                   if ($.inArray(mensa.id,marker.mensaIds) > -1) {
+                                       mensaMap.setView(new L.LatLng(mensa.point.y, mensa.point.x),14);
                                        marker.openPopup();
                                    }
                                 });
@@ -44,7 +44,6 @@ $(document).ready(function() {
             var tooltipTemplate = '<b><a href="{url}">{name}</a></b><br/>{address}<br/>{zipcode} {city}<br/><br/><a class="btn btn-default" href="{url}">View menu</a>';
             $.each(data, function(index,mensa) {
                 if (mensa.point) {
-                    var marker = L.marker([mensa.point.y, mensa.point.x]).addTo(mensaMap);
                     var tooltipData = {
                         url : '/mensa/' + mensa.id,
                         name : mensa.name,
@@ -52,9 +51,23 @@ $(document).ready(function() {
                         zipcode : mensa.zipcode,
                         city : mensa.city
                     };
-                    marker.bindPopup(L.Util.template(tooltipTemplate, tooltipData));
-                    marker.mensaId = mensa.id;
-                    markers.push(marker);
+                    var tooltipText = L.Util.template(tooltipTemplate, tooltipData);
+                    var marker = undefined;
+                    $.each(markers, function(index, value) {
+                        var latLng = value.getLatLng();
+                        if (latLng.lat.toPrecision(5) === mensa.point.y.toPrecision(5) && latLng.lng.toPrecision(5) === mensa.point.x.toPrecision(5)) {
+                            var oldContent = value.getPopup().getContent();
+                            value.bindPopup(tooltipText + '<br/><br/>' + oldContent);
+                            value.mensaIds.push(mensa.id);
+                            marker = value;
+                        }
+                    });
+                    if (marker === undefined) {
+                        marker = L.marker([mensa.point.y, mensa.point.x]).addTo(mensaMap);
+                        marker.bindPopup(tooltipText);
+                        marker.mensaIds = [mensa.id];
+                        markers.push(marker);
+                    }
                 }
             });
         })

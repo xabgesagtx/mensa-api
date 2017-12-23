@@ -1,5 +1,6 @@
 package com.github.xabgesagtx.mensa.scrape;
 
+import com.github.xabgesagtx.mensa.config.GeoPointConfig;
 import com.github.xabgesagtx.mensa.config.ScrapeConfig;
 import com.github.xabgesagtx.mensa.geo.GeodataProvider;
 import com.github.xabgesagtx.mensa.model.Mensa;
@@ -9,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -74,7 +76,12 @@ public class MensaScraper extends AbstractSelfContainedScraper<List<Mensa>> {
 								.city(details.getCity())
 								.zipcode(details.getZipcode())
 								.updatedAt(LocalDateTime.now());
-						geodataProvider.search(details.getAddress(), details.getZipcode(), details.getCity()).ifPresent(point -> mensaBuilder.point(point));
+						GeoPointConfig fixedGeoPointConfig = config.getCoordinatesForMensaId().get(mensaId);
+						if (fixedGeoPointConfig != null) {
+							mensaBuilder.point(new Point(fixedGeoPointConfig.getLongitude(), fixedGeoPointConfig.getLatitude()));
+						} else {
+							geodataProvider.search(details.getAddress(), details.getZipcode(), details.getCity()).ifPresent(point -> mensaBuilder.point(point));
+						}
 						result = Stream.of(mensaBuilder.build());
 					}
 				}

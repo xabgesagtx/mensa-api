@@ -1,6 +1,7 @@
 package com.github.xabgesagtx.mensa.scrape;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.github.xabgesagtx.mensa.config.ScrapeConfig;
 import com.github.xabgesagtx.mensa.geo.GeodataProvider;
 import com.github.xabgesagtx.mensa.model.Mensa;
 import com.github.xabgesagtx.mensa.scrape.model.MensaDetails;
@@ -38,6 +39,9 @@ public class MensaScraperTest {
 
 	@Mock
 	private MensaDetailsScraper detailsScraper;
+
+	@Mock
+	private ScrapeConfig config;
 
 	@Mock
 	private GeodataProvider geodataProvider;
