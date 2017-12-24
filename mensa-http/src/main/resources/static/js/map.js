@@ -3,7 +3,6 @@ $(document).ready(function() {
     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
     var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 18, attribution: osmAttrib});
-    mensaMap.setView(new L.LatLng(53.5411, 10.0437),10);
     mensaMap.addLayer(osm);
     var markers = [];
     var nearestMensaButton = L.Control.extend({
@@ -70,6 +69,8 @@ $(document).ready(function() {
                     }
                 }
             });
+            var group = new L.featureGroup(markers);
+            mensaMap.fitBounds(group.getBounds().pad(0.5));
         })
        .fail(function() {
            alert('Could not load mensa data');
