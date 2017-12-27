@@ -13,6 +13,7 @@ import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.time.DayOfWeek;
@@ -46,8 +47,12 @@ public class KeyboardUtils {
         KeyboardRow secondRow = new KeyboardRow();
         secondRow.add(messagesService.getMessage(Messages.COMMAND_CHANGE_MENSA));
         secondRow.add(messagesService.getMessage(Messages.COMMAND_WEEKDAYS));
+        KeyboardRow thirdRow = new KeyboardRow();
+        KeyboardButton selectNearestMensaButton = new KeyboardButton(messagesService.getMessage(Messages.COMMAND_SELECT_NEAREST_MENSA));
+        selectNearestMensaButton.setRequestLocation(true);
+        thirdRow.add(selectNearestMensaButton);
         keyboard.setResizeKeyboard(true);
-        keyboard.setKeyboard(Arrays.asList(firstRow, secondRow));
+        keyboard.setKeyboard(Arrays.asList(firstRow, secondRow, thirdRow));
         return keyboard;
     }
 

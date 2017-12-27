@@ -70,7 +70,7 @@ $(document).ready(function() {
                 }
             });
             var group = new L.featureGroup(markers);
-            mensaMap.fitBounds(group.getBounds().pad(0.5));
+            mensaMap.fitBounds(group.getBounds().pad(0.05));
         })
        .fail(function() {
            alert('Could not load mensa data');

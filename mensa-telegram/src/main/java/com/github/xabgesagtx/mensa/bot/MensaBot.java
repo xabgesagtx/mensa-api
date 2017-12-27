@@ -15,11 +15,15 @@ import com.github.xabgesagtx.mensa.persistence.MensaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.geo.Distance;
+import org.springframework.data.geo.Metrics;
+import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.api.objects.CallbackQuery;
+import org.telegram.telegrambots.api.objects.Location;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
@@ -115,7 +119,7 @@ public class MensaBot extends TelegramLongPollingBot {
     private void handleMensaChange(String mensaId, Long chatId, String queryId) {
         simpleCallbackAnswer(queryId);
         botUserRepo.save(BotUser.of(chatId,mensaId));
-        sendResponse(chatId,createMainSelectMessage());
+        sendResponse(chatId,createMainSelectMessage(mensaId));
     }
 
     private void handleMessage(Message message) {
@@ -128,7 +132,11 @@ public class MensaBot extends TelegramLongPollingBot {
         } else if (StringUtils.equalsIgnoreCase(messagesService.getMessage(Messages.COMMAND_WEEKDAYS), text)) {
             result = createSelectDayOfWeekMessage(userOpt.get().getMensaId());
         } else if (StringUtils.equalsIgnoreCase(messagesService.getMessage(Messages.COMMAND_BACK), text)) {
-            result = createMainSelectMessage();
+            result = createMainSelectMessage(userOpt.get().getMensaId());
+        } else if (message.hasLocation()) {
+            Location location = message.getLocation();
+            Optional<Mensa> nearestMensa = mensaRepo.findByPointNear(new Point(location.getLongitude(), location.getLatitude()), new Distance(10000, Metrics.KILOMETERS)).stream().findFirst();
+            result = nearestMensa.map(this::createMainSelectMessage).orElseGet(this::createNoNearestMensa);
         } else {
             Mensa mensa = mensaRepo.findOne(userOpt.get().getMensaId());
             if (mensa == null) {
@@ -158,14 +166,27 @@ public class MensaBot extends TelegramLongPollingBot {
         }
     }
 
-    private SendMessage createMainSelectMessage() {
+    private SendMessage createMainSelectMessage(String mensaId) {
+        Mensa mensa = mensaRepo.findOne(mensaId);
+        if (mensa == null) {
+            return createSelectMensaMessage();
+        } else {
+            return createMainSelectMessage(mensa);
+        }
+    }
+
+    private SendMessage createMainSelectMessage(Mensa mensa) {
         SendMessage result = new SendMessage();
-        result.setText(messagesService.getMessage(Messages.RESPONSE_SELECT_DAY));
+        result.setText(messagesService.getMessage(Messages.RESPONSE_SELECT_DAY, mensa.getName()));
         result.setReplyMarkup(keyboardUtils.createMainSelectKeyboard());
         return result;
     }
 
-
+    private SendMessage createNoNearestMensa() {
+        SendMessage result = new SendMessage();
+        result.setText(messagesService.getMessage(Messages.RESPONSE_NO_NEAREST_MENSA));
+        return result;
+    }
 
 
     private SendMessage createSelectDayOfWeekMessage(String mensaId) {
