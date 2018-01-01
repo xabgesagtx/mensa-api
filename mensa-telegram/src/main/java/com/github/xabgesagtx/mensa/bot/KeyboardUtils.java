@@ -64,7 +64,7 @@ public class KeyboardUtils {
         ReplyKeyboardMarkup keyboard = new ReplyKeyboardMarkup();
         KeyboardRow firstRow = new KeyboardRow();
         firstRow.add(DayOfWeek.MONDAY.getDisplayName(TextStyle.FULL, BotConstants.DEFAULT_LOCALE));
-        firstRow.add(DayOfWeek.THURSDAY.getDisplayName(TextStyle.FULL, BotConstants.DEFAULT_LOCALE));
+        firstRow.add(DayOfWeek.TUESDAY.getDisplayName(TextStyle.FULL, BotConstants.DEFAULT_LOCALE));
         firstRow.add(DayOfWeek.WEDNESDAY.getDisplayName(TextStyle.FULL, BotConstants.DEFAULT_LOCALE));
         KeyboardRow secondRow = new KeyboardRow();
         secondRow.add(DayOfWeek.THURSDAY.getDisplayName(TextStyle.FULL, BotConstants.DEFAULT_LOCALE));

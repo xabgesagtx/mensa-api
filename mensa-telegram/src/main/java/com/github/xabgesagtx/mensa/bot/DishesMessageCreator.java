@@ -4,6 +4,7 @@ import com.github.xabgesagtx.mensa.bot.date.DateSearchResult;
 import com.github.xabgesagtx.mensa.bot.filter.FilterInfo;
 import com.github.xabgesagtx.mensa.bot.filter.FilterType;
 import com.github.xabgesagtx.mensa.bot.messages.MessagesService;
+import com.github.xabgesagtx.mensa.bot.model.DishBotDTO;
 import com.github.xabgesagtx.mensa.config.BotConstants;
 import com.github.xabgesagtx.mensa.config.FilterConfig;
 import com.github.xabgesagtx.mensa.config.TelegramConfig;
