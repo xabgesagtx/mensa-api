@@ -80,3 +80,19 @@ telegram:
 
 * MongoDB
 * Java 8
+
+## Development
+
+### Intellij Idea
+
+If you use Intellij Idea in `Build, Execution, Deployment > Build Tools > Gradle` deactive `Create separate module per source set`. Otherwise you would get problems with the query dsl classes.
+
+### Docker 
+
+To quickly get a mongodb up and running there is a docker compose file with a mongodb container. Just run the following command before starting the application locally:
+
+```
+docker-compose up -d
+```
+
+Of course you need `docker` and `docker-compose` installed for this.
