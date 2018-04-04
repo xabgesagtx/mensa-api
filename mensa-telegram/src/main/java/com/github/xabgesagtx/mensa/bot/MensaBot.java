@@ -138,19 +138,18 @@ public class MensaBot extends TelegramLongPollingBot {
             Optional<Mensa> nearestMensa = mensaRepo.findByPointNear(new Point(location.getLongitude(), location.getLatitude()), new Distance(10000, Metrics.KILOMETERS)).stream().findFirst();
             result = nearestMensa.map(this::createMainSelectMessage).orElseGet(this::createNoNearestMensa);
         } else {
-            Mensa mensa = mensaRepo.findOne(userOpt.get().getMensaId());
-            if (mensa == null) {
-                result = createSelectMensaMessage();
-            } else {
+            result = mensaRepo.findById(userOpt.get().getMensaId()).map(mensa -> {
+                SendMessage response;
                 Optional<DateSearchResult> resultOpt = dateSuppliers.stream().flatMap(supplier -> supplier.forTextAndMensaAsStream(text, mensa)).findFirst();
                 if (resultOpt.isPresent()) {
-                    result = dishesMessageCreator.createMessage(userOpt.get().getMensaId(), resultOpt.get());
+                    response = dishesMessageCreator.createMessage(mensa.getId(), resultOpt.get());
                 } else {
-                    result = new SendMessage();
-                    result.setText(messagesService.getMessage(Messages.RESPONSE_DONT_UNDERSTAND));
-                    result.setReplyMarkup(keyboardUtils.createMainSelectKeyboard());
+                    response = new SendMessage();
+                    response.setText(messagesService.getMessage(Messages.RESPONSE_DONT_UNDERSTAND));
+                    response.setReplyMarkup(keyboardUtils.createMainSelectKeyboard());
                 }
-            }
+                return response;
+            }).orElseGet(() -> this.createSelectMensaMessage());
         }
         sendResponse(chatId, result);
     }
@@ -167,12 +166,7 @@ public class MensaBot extends TelegramLongPollingBot {
     }
 
     private SendMessage createMainSelectMessage(String mensaId) {
-        Mensa mensa = mensaRepo.findOne(mensaId);
-        if (mensa == null) {
-            return createSelectMensaMessage();
-        } else {
-            return createMainSelectMessage(mensa);
-        }
+        return mensaRepo.findById(mensaId).map(this::createMainSelectMessage).orElseGet(() -> createSelectMensaMessage());
     }
 
     private SendMessage createMainSelectMessage(Mensa mensa) {

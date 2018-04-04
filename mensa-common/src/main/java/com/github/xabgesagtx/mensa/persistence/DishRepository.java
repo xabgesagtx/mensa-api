@@ -3,7 +3,7 @@ package com.github.xabgesagtx.mensa.persistence;
 import com.github.xabgesagtx.mensa.model.Dish;
 import com.github.xabgesagtx.mensa.model.QDish;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
 
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Repository for dishes
  */
-public interface DishRepository extends MongoRepository<Dish, String>, QueryDslPredicateExecutor<Dish>, QuerydslBinderCustomizer<QDish> {
+public interface DishRepository extends MongoRepository<Dish, String>, QuerydslPredicateExecutor<Dish>, QuerydslBinderCustomizer<QDish> {
 	
 	List<Dish> findByDateAndMensaId(LocalDate date, String mensaId);
 

@@ -31,12 +31,7 @@ public class LabelController {
 
     @GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Label byId(@PathVariable("id") String id) {
-        Label result = repo.findOne(id);
-        if (result == null) {
-            throw new ResourceNotFoundException("No label with id " + id);
-        } else {
-            return result;
-        }
+        return repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("No label with id " + id));
     }
 
 }

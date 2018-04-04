@@ -33,8 +33,8 @@ public class DayUpdater implements Consumer<Event<DayUpdate>> {
 		DayUpdate update = event.getData();
 		log.info("Starting update for day {} and mensa {}", update.getDay().format(DateTimeFormatter.ISO_DATE), update.getMensaId());
 		List<Dish> oldDishes = repo.findByDateAndMensaId(update.getDay(), update.getMensaId());
-		repo.delete(oldDishes);
-		repo.save(update.getDishes());
+		repo.deleteAll(oldDishes);
+		repo.saveAll(update.getDishes());
 		log.info("Finished update for day {} and mensa {}. New: {}, Old: {}", update.getDay().format(DateTimeFormatter.ISO_DATE), update.getMensaId(), update.getDishes().size(), oldDishes.size());
 	}
 	

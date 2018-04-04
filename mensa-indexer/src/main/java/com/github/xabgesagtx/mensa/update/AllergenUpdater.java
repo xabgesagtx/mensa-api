@@ -30,8 +30,8 @@ public class AllergenUpdater {
         if (!allergens.isEmpty()) {
             List<Allergen> oldAllergens = repo.findAll();
             log.info("Replacing {} old allergens with {} new ones", oldAllergens.size(), allergens.size());
-            repo.delete(oldAllergens);
-            repo.save(allergens);
+            repo.deleteAll(oldAllergens);
+            repo.saveAll(allergens);
             log.info("Finished allergen update");
         } else {
             log.info("No allergens found");

@@ -1,17 +1,19 @@
 
-apply plugin: 'org.springframework.boot'
+plugins {
+	id "org.springframework.boot"
+}
 
 jar {
 	baseName = 'mensa-telegram'
 	version = '0.0.1-SNAPSHOT'
 }
 
-bootRepackage {
-	executable = true
+bootJar {
+	launchScript()
 }
 
 dependencies {
-	compile('com.github.xabgesagtx:telegram-spring-boot-starter:0.8')
+	compile('com.github.xabgesagtx:telegram-spring-boot-starter:0.16')
 	compile('org.freemarker:freemarker:2.3.26-incubating')
 	compile project(':mensa-common')
 }

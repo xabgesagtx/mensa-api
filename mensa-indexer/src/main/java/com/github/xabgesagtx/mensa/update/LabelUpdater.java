@@ -32,8 +32,8 @@ public class LabelUpdater {
         if (!labels.isEmpty()) {
             List<Label> oldLabels = repo.findAll();
             log.info("Replacing {} old labels with {} new ones", oldLabels.size(), labels.size());
-            repo.delete(oldLabels);
-            repo.save(labels);
+            repo.deleteAll(oldLabels);
+            repo.saveAll(labels);
             log.info("Finished label update");
         } else {
             log.info("No labels found");

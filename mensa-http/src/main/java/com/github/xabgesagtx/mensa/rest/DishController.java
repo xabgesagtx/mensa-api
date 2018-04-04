@@ -30,11 +30,6 @@ public class DishController {
 
     @GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Dish byId(@PathVariable("id") String id) {
-        Dish result = repo.findOne(id);
-        if (result == null) {
-            throw new ResourceNotFoundException("No dish with id " + id);
-        } else {
-            return result;
-        }
+        return repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("No dish with id " + id));
     }
 }

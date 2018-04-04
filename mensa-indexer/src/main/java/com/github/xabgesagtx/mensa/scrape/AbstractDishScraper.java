@@ -90,7 +90,7 @@ abstract class AbstractDishScraper {
         Optional<BigDecimal> result = Optional.empty();
         try {
             result = Optional.of((BigDecimal)decimalFormat.parseObject(text));
-        } catch (ParseException e) {
+        } catch (ParseException | NumberFormatException e) {
             log.warn("Failed to parse price from string: \"{}\"", text);
         }
         return result;

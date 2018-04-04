@@ -37,11 +37,6 @@ public class MensaController {
 
     @GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mensa findById(@PathVariable("id") String id) {
-        Mensa result = repo.findOne(id);
-        if (result == null) {
-            throw new ResourceNotFoundException("No mensa with id " + id);
-        } else {
-            return result;
-        }
+        return repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("No mensa with id " + id));
     }
 }

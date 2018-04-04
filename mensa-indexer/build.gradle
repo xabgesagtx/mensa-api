@@ -1,19 +1,22 @@
 
-apply plugin: 'org.springframework.boot'
+plugins {
+	id "org.springframework.boot"
+}
 
 jar {
 	baseName = 'mensa-indexer'
 	version = '0.0.1-SNAPSHOT'
 }
 
-bootRepackage {
-	executable = true
+bootJar {
+	launchScript()
 }
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.jsoup:jsoup:1.10.1')
-	compile('io.projectreactor:reactor-bus')
+	compile('io.projectreactor:reactor-core:2.0.8.RELEASE')
+	compile('io.projectreactor:reactor-bus:2.0.8.RELEASE')
 	compile('org.springframework:spring-web')
 	testCompile('commons-io:commons-io:2.5')
 	compile project(':mensa-common')

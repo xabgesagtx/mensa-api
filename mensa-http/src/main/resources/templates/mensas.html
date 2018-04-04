@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout">
 <head>
 	<title>Mensas</title>
 	<link rel="stylesheet" th:href="@{/webjars/leaflet/1.2.0/leaflet.css}" />
-	<script type="text/javascript" th:src="@{/webjars/leaflet/1.2.0/leaflet.js}" />
-	<script type="text/javascript" th:src="@{/js/map.js}" />
+	<script type="text/javascript" th:src="@{/webjars/leaflet/1.2.0/leaflet.js}"></script>
+	<script type="text/javascript" th:src="@{/js/map.js}"></script>
 </head>
 <body>
 <div class="container" layout:fragment="content">

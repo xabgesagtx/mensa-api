@@ -87,7 +87,7 @@ public class DishesMessageCreator {
     private String formatText(String mensaId, DateSearchResult dateSearchResult, List<DishBotDTO> dishes) {
         String result;
         try {
-            Mensa mensa = mensaRepo.findOne(mensaId);
+            Mensa mensa = mensaRepo.findById(mensaId).orElse(null);
             Map<String,Object> root = new HashMap<>();
             root.put("mensa", mensa);
             if (dateSearchResult.getAlternativeDate().isPresent()) {
