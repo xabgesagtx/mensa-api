@@ -1,7 +1,7 @@
 [ {
   "id" : "590",
   "name" : "Armgartstraße",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/590",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/590",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -17,7 +17,7 @@
 }, {
   "id" : "520",
   "name" : "Bergedorf",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/520",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/520",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -33,7 +33,7 @@
 }, {
   "id" : "530",
   "name" : "Berliner-Tor",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/530",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/530",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -49,7 +49,7 @@
 }, {
   "id" : "560",
   "name" : "Botanischer-Garten",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/560",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/560",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -65,7 +65,7 @@
 }, {
   "id" : "410",
   "name" : "Bucerius-Law-School",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/410",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/410",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -81,7 +81,7 @@
 }, {
   "id" : "660",
   "name" : "Cafe Alexanderstraße",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/660",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/660",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -97,7 +97,7 @@
 }, {
   "id" : "690",
   "name" : "Café (am Mittelweg)",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/690",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/690",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -113,7 +113,7 @@
 }, {
   "id" : "531",
   "name" : "Café Berliner Tor",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/531",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/531",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -129,7 +129,7 @@
 }, {
   "id" : "680",
   "name" : "Café CFEL",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/680",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/680",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -145,7 +145,7 @@
 }, {
   "id" : "610",
   "name" : "Cafe Jungiusstraße",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/610",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/610",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -161,7 +161,7 @@
 }, {
   "id" : "340",
   "name" : "Campus",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/340",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/340",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -177,7 +177,7 @@
 }, {
   "id" : "420",
   "name" : "Finkenau",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/420",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/420",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -193,7 +193,7 @@
 }, {
   "id" : "540",
   "name" : "Geomatikum",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/540",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/540",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -209,7 +209,7 @@
 }, {
   "id" : "430",
   "name" : "HCU",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/430",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/430",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -225,7 +225,7 @@
 }, {
   "id" : "570",
   "name" : "Harburg",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/570",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/570",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -241,7 +241,7 @@
 }, {
   "id" : "350",
   "name" : "Philosophenturm",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/350",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/350",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -257,7 +257,7 @@
 }, {
   "id" : "580",
   "name" : "Stellingen",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/580",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/580",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",
@@ -273,7 +273,7 @@
 }, {
   "id" : "310",
   "name" : "Studierendenhaus",
-  "mainUrl" : "http://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/310",
+  "mainUrl" : "https://speiseplan.studierendenwerk-hamburg.de/index.php/de/cafeteria/show/id/310",
   "todayUrl" : "http://example.com/today",
   "tomorrowUrl" : "http://example.com/tomorrow",
   "thisWeekUrl" : "http://example.com/thisWeek",

@@ -1,6 +1,6 @@
 scrape:
-  mensasUrl: "http://www.studierendenwerk-hamburg.de/studierendenwerk/de/essen/speiseplaene/"
-  allergenAndCategoryUrl: "http://www.studierendenwerk-hamburg.de/studierendenwerk/de/essen/lebensmittelinformationen/Symbole-und-Kennzeichen-im-Speiseplan/symbole-und-kennzeichen.php"
+  mensasUrl: "https://www.studierendenwerk-hamburg.de/studierendenwerk/de/essen/speiseplaene/"
+  allergenAndCategoryUrl: "https://www.studierendenwerk-hamburg.de/studierendenwerk/de/essen/lebensmittelinformationen/Symbole-und-Kennzeichen-im-Speiseplan/symbole-und-kennzeichen.php"
   nominatinUrl: "http://nominatim.openstreetmap.org/search"
   coordinatesForMensaId:
     560:

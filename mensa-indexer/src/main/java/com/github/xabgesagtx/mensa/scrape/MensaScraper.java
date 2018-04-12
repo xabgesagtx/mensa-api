@@ -45,7 +45,7 @@ public class MensaScraper extends AbstractSelfContainedScraper<List<Mensa>> {
 	List<Mensa> scrapeFromDocument(Document document) {
 		return document.select("#content .introduction a").stream().flatMap(link -> {
 			Stream<Mensa> result = Stream.empty();
-			String mensaUrl = link.absUrl("href");
+			String mensaUrl = fixLinks(link.absUrl("href"));
 			String name = StringUtils.trim(link.text());
 			if (StringUtils.isNotBlank(name) && StringUtils.isNotBlank(mensaUrl)) {
 				Optional<String> mensaIdOpt = getIdFromMensaUrl(mensaUrl);
@@ -90,7 +90,11 @@ public class MensaScraper extends AbstractSelfContainedScraper<List<Mensa>> {
 		}).collect(Collectors.toList());
 	}
 
-    @Override
+	private String fixLinks(String url) {
+		return StringUtils.replaceOnce(url, "http://", "https://");
+	}
+
+	@Override
     List<Mensa> getDefault() {
         return Collections.emptyList();
     }

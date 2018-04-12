@@ -21,9 +21,6 @@ public class MensaUpdater {
 	
 	@Autowired
 	private MensaScraper scraper;
-	
-	@Autowired
-	private ScrapeConfig config;
 
 	@Scheduled(cron = "${update.mensa.cron}")
 	public void update() {
