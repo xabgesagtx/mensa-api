@@ -30,7 +30,7 @@ public class Dish {
 	private String description;
 	private List<String> labels;
 	private List<BigDecimal> prices;
-	private List<Integer> allergens;
+	private List<String> allergens;
 
 	@Transient
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
@@ -39,7 +39,7 @@ public class Dish {
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate to;
 
-	public static Dish of(String id, LocalDate date, String mensaId, String category, String description, List<String> labels, List<BigDecimal> prices, List<Integer> allergens) {
+	public static Dish of(String id, LocalDate date, String mensaId, String category, String description, List<String> labels, List<BigDecimal> prices, List<String> allergens) {
 		return Dish.builder().id(id).date(date).mensaId(mensaId).category(category).description(description).labels(labels).prices(prices).allergens(allergens).build();
 	}
 

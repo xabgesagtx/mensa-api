@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Repository for allergens
  */
-public interface AllergenRepository extends MongoRepository<Allergen,Integer> {
+public interface AllergenRepository extends MongoRepository<Allergen,String> {
 
     List<Allergen> findAllByOrderByNumberAsc();
 }

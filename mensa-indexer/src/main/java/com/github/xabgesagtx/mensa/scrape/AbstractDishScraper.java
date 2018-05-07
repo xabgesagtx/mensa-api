@@ -39,6 +39,8 @@ abstract class AbstractDishScraper {
     @Autowired
     private WebUtils utils;
 
+    private final IntegerAwareStringComparator comparator = new IntegerAwareStringComparator();
+
     AbstractDishScraper() {
         decimalFormat = (DecimalFormat) NumberFormat.getInstance(Locale.GERMANY);
         decimalFormat.setParseBigDecimal(true);
@@ -112,8 +114,8 @@ abstract class AbstractDishScraper {
      */
     abstract List<Dish> scrapeFromTable(LocalDate baseDate, Elements rows, String mensaId);
 
-    protected List<Integer> getAllergens(Element cell) {
-        return cell.select("span.tooltip").stream().map(Element::text).filter(StringUtils::isNotBlank).filter(StringUtils::isNumeric).map(Integer::parseInt).distinct().sorted().collect(Collectors.toList());
+    protected List<String> getAllergens(Element cell) {
+        return cell.select("span.tooltip").stream().map(Element::text).filter(StringUtils::isNotBlank).map(String::trim).distinct().sorted(comparator).collect(Collectors.toList());
     }
 
     protected List<String> getLabels(Element cell) {

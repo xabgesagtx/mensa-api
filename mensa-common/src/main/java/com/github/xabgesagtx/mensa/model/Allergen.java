@@ -23,7 +23,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Allergen implements Comparable<Allergen> {
 
 	@Id
-	private Integer number;
+	private String number;
 	private String name;
 
 	@Override

@@ -71,7 +71,7 @@ public class MenuWeekScraper extends AbstractDishScraper {
 			Stream<Dish> result = Stream.empty();
 			List<String> labels = getLabels(p);
 			Optional<String> description = p.select("strong").stream().findFirst().map(Element::text).filter(StringUtils::isNotBlank);
-			List<Integer> allergens = getAllergens(p);
+			List<String> allergens = getAllergens(p);
 			List<BigDecimal> prices = p.select("span.price").stream().map(Element::text).filter(StringUtils::isNotBlank).map(this::getPricesFromString).findFirst().orElseGet(Lists::newArrayList);
 			if (description.isPresent() && !prices.isEmpty()) {
 				String id = getId(mensaId, date, rowIndex, paragraphIndex.getAndIncrement());

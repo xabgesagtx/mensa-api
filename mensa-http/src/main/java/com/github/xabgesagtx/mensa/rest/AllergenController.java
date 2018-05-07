@@ -30,7 +30,7 @@ public class AllergenController {
     }
 
     @GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Allergen byId(@PathVariable("id") Integer id) {
+    public Allergen byId(@PathVariable("id") String id) {
         return repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("No allergen with id " + id));
     }
 }

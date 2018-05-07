@@ -65,7 +65,7 @@ public class ExportDishesJob implements Runnable {
 		for (Dish dish : dishes) {
 			String labelsString = dish.getLabels().stream().collect(Collectors.joining(JOIN_SEPARATOR));
 			String pricesString = dish.getPrices().stream().map(price -> String.format(Locale.ENGLISH, "%.2f", price)).collect(Collectors.joining(JOIN_SEPARATOR));
-			String allergensString = dish.getAllergens().stream().map(allergen -> Integer.toString(allergen)).collect(Collectors.joining(JOIN_SEPARATOR));
+			String allergensString = String.join(JOIN_SEPARATOR, dish.getAllergens());
 			csvPrinter.printRecord(dish.getId(), DateTimeFormatter.ISO_DATE.format(dish.getDate()), dish.getMensaId(), dish.getCategory(), dish.getDescription(), labelsString, pricesString, allergensString);
 		}
 	}

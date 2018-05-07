@@ -3,10 +3,10 @@
   "date" : "2017-07-01",
   "mensaId" : "100",
   "category" : "Gut und günstig",
-  "description" : "Brokkoli-Nudel-Gratin (14,20,22) , mediterrane Tomatensoße (25)",
+  "description" : "Brokkoli-Nudel-Gratin (14,20,Sl) , mediterrane Tomatensoße (25)",
   "labels" : [ "Klima Teller", "vegetarisch" ],
   "prices" : [ 3.05, 3.05 ],
-  "allergens" : [ 14, 20, 22, 25 ]
+  "allergens" : [ "14", "20", "25", "Sl"]
 }, {
   "id" : "100_2017_07_01_1_2",
   "date" : "2017-07-01",

@@ -48,7 +48,7 @@ public class SingleDayScraper extends AbstractDishScraper {
                 Element elem = descriptionElemOpt.get();
                 String description = elem.text();
                 List<String> labels = getLabels(elem);
-                List<Integer> allergens = getAllergens(elem);
+                List<String> allergens = getAllergens(elem);
                 if (StringUtils.isBlank(category)) {
                     paragraphIndex++;
                     category = previousCategory;

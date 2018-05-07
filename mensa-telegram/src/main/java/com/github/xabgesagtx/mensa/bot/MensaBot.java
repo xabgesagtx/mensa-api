@@ -100,7 +100,7 @@ public class MensaBot extends TelegramLongPollingBot {
         simpleCallbackAnswer(queryId);
         EditMessageText editMessage = dishesMessageCreator.createEditMessage(info, messageId, chatId);
         try {
-            editMessageText(editMessage);
+            sendApiMethod(editMessage);
         } catch (TelegramApiException e) {
             log.warn("Failed to edit message {}: {}", messageId, e.getMessage());
         }
@@ -110,7 +110,7 @@ public class MensaBot extends TelegramLongPollingBot {
         AnswerCallbackQuery answer = new AnswerCallbackQuery();
         answer.setCallbackQueryId(queryId);
         try {
-            answerCallbackQuery(answer);
+            sendApiMethod(answer);
         } catch (TelegramApiException e) {
             log.warn("Failed to answer callback query with id {}", queryId);
         }
@@ -159,7 +159,7 @@ public class MensaBot extends TelegramLongPollingBot {
             log.info("Sending response to {}", chatId);
             result.setChatId(chatId);
             result.setParseMode("HTML");
-            sendMessage(result);
+            sendApiMethod(result);
         } catch (TelegramApiException e) {
             log.error("Failed to send response to {} due to error: {}", chatId, e.getMessage());
         }

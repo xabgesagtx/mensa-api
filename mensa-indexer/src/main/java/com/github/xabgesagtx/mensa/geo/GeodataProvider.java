@@ -41,7 +41,7 @@ public class GeodataProvider {
 	@Autowired
 	private ScrapeConfig config;
 
-	private Map<String, Point> geoDataCache = new ConcurrentHashMap();
+	private Map<String, Point> geoDataCache = new ConcurrentHashMap<>();
 
 	private final RateLimiter rateLimiter = RateLimiter.create(1);
 
@@ -87,7 +87,7 @@ public class GeodataProvider {
 		mensaRepo.findAll().stream().filter(mensa -> mensa.getPoint() != null).forEach(mensa -> geoDataCache.put(createQueryString(mensa.getAddress(), mensa.getZipcode(), mensa.getCity()), mensa.getPoint()));
 	}
 
-	String createQueryString(String address, String zipcode, String city) {
+	private String createQueryString(String address, String zipcode, String city) {
 		return String.format("%s, %s %s, Germany", address, zipcode, city);
 	}
 }

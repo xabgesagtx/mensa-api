@@ -27,7 +27,7 @@ public class AllergenCache {
      * @param number of the allergen
      * @return allergen if available, empty otherwise
      */
-    public Optional<Allergen> getAllergen(Integer number) {
+    public Optional<Allergen> getAllergen(String number) {
         synchronized (allergens) {
             return allergens.stream().filter(allergen -> allergen.getNumber().equals(number)).findFirst();
         }

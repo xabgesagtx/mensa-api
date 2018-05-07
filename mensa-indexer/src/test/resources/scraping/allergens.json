@@ -29,45 +29,45 @@
   "number" : "10",
   "name" : "Phenylalaninquelle"
 }, {
-  "number" : "14",
-  "name" : "enthält glutenhaltiges Getreide (z. B. Weizen, Roggen, Gerste etc.)"
+  "number" : "Ei",
+  "name" : "Ei/-erzeugnisse"
 }, {
-  "number" : "15",
-  "name" : "Krebstiere und Krebstiererzeugnisse"
-}, {
-  "number" : "16",
-  "name" : "Ei und Eierzeugnisse"
-}, {
-  "number" : "17",
-  "name" : "Fisch und Fischerzeugnisse"
-}, {
-  "number" : "18",
+  "number" : "En",
   "name" : "Erdnüsse und Erdnusserzeugnisse"
 }, {
-  "number" : "19",
-  "name" : "Soja und Sojaerzeugnisse"
+  "number" : "Fi",
+  "name" : "Fisch und Fischerzeugnisse"
 }, {
-  "number" : "20",
+  "number" : "Gl",
+  "name" : "enthält glutenhaltiges Getreide (z. B. Weizen, Roggen, Gerste etc.)"
+}, {
+  "number" : "Kr",
+  "name" : "Krebstiere und Krebstiererzeugnisse"
+}, {
+  "number" : "La",
   "name" : "Milch und Milcherzeugnisse (einschl. Laktose)"
 }, {
-  "number" : "21",
-  "name" : "Schalenfrüchte (z.B. Mandel, Haselnüsse, Walnuss etc.)"
-}, {
-  "number" : "22",
-  "name" : "Sellerie und Sellerieerzeugnisse"
-}, {
-  "number" : "23",
-  "name" : "Senf und Senferzeugnisse"
-}, {
-  "number" : "24",
-  "name" : "Sesamsamen und Sesamsamenerzeugnisse"
-}, {
-  "number" : "25",
-  "name" : "Schwefeldioxid und Sulfite (Konzentration über 10mg/kg oder 10mg/l)"
-}, {
-  "number" : "26",
+  "number" : "Lu",
   "name" : "Lupine und - erzeugnisse"
 }, {
-  "number" : "27",
-  "name" : "Mollusken"
+  "number" : "Nu",
+  "name" : "Schalenfrüchte (z.B. Mandel, Haselnüsse, Walnuss etc.)/-erzeugnisse"
+}, {
+  "number" : "Se",
+  "name" : "Sesamsamen und Sesamsamenerzeugnisse"
+}, {
+  "number" : "Sf",
+  "name" : "Senf und Senferzeugnisse"
+}, {
+  "number" : "Sl",
+  "name" : "Sellerie und Sellerieerzeugnisse"
+}, {
+  "number" : "So",
+  "name" : "Soja und Sojaerzeugnisse"
+}, {
+  "number" : "Sw",
+  "name" : "Schwefeldioxid und Sulfite (Konzentration über 10mg/kg oder 10mg/l)"
+}, {
+  "number" : "Wt",
+  "name" : "Weichtiere (z.B. Muscheln und Weinbergschnecken) und Weichtiererzeugnisse"
 } ]
